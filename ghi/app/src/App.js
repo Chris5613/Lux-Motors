@@ -4,6 +4,7 @@ import Nav from './Nav';
 import SalesPersonForm from './Sales/SalesPersonForm';
 import NewCustomer from './Sales/NewCustomer';
 import NewSaleForm from './Sales/NewSaleForm';
+import ListSales from './Sales/ListSales';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="sales/">
               < Route path="new" element={<NewSaleForm />} />
+          </Route>
+          <Route path="sales/">
+              < Route path="list" element={<ListSales />} />
           </Route>
         </Routes>
       </div>

@@ -31,15 +31,15 @@ const ListSales = () => {
                     </tr>
                 </thead>
                 <tbody>
-                {/* {sales &&  sales.map(sale =>
+                {sales &&  sales.map(sale =>
                     <tr key={sale.id}>
                         <th>{sale.sales_person.name}</th>
-                        <th>{sale.sales_person.employee_id}</th>
+                        <th>{sale.sales_person.employee_number}</th>
                         <th>{sale.customer.name}</th>
-                        <th>{sale.automobile.vin}</th>
+                        <th>{sale.automobile}</th>
                         <th>${sale.price}</th>
                     </tr>
-                )} */}
+                )}
                 </tbody>
             </table>
         </div>
