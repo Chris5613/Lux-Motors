@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Technician, Appointment, AutoMobileVO
+
 # Register your models here.
+from .models import Technician, Appointment, AutoMobileVO
 
 @admin.register(Technician)
 class TechnicianAdmin(admin.ModelAdmin):
