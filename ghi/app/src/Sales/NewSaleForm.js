@@ -12,7 +12,7 @@ const NewSaleForm = () => {
 
 
     async function getAutomobiles() {
-        const url = "http://localhost:8090/api/sales/car";
+        const url = "http://localhost:8090/api/sales/automobiles/";
         const response = await fetch(url);
 
         if (response.ok) {
@@ -41,7 +41,7 @@ const NewSaleForm = () => {
 
     useEffect(() => {
         async function getCustomers() {
-            const url = "http://localhost:8090/api/sales/customer/";
+            const url = "http://localhost:8090/api/sales/customers/";
             const response = await fetch(url);
 
             if (response.ok) {
@@ -56,6 +56,11 @@ const NewSaleForm = () => {
         event.preventDefault();
         const data = {};
 
+        data.automobile = automobile;
+        data.sales_person = salesPerson;
+        data.customer = customer;
+        data.price = price;
+
         const salesHistoryUrl = "http://localhost:8090/api/sales/records/";
         const fetchConfig = {
             method: "post",
@@ -68,6 +73,7 @@ const NewSaleForm = () => {
         const response = await fetch(salesHistoryUrl, fetchConfig);
         if (response.ok) {
             const newSalesRecord = await response.json();
+            console.log(newSalesRecord)
             setAutomobile("");
             setSalesPerson("");
             setCustomer("");
@@ -84,8 +90,8 @@ const NewSaleForm = () => {
                         <div className="mb-3">
                             <select onChange={(event) => setAutomobile(event.target.value)} required className="form-select" value={automobile} >
                                 <option value="">Choose an automobile</option>
-                                {automobiles && automobiles.map((automobile,index) =>
-                                    <option key={index} value={automobile.vin}>
+                                {automobiles.map((automobile,index) =>
+                                    <option key={automobile.import_href} value={automobile.import_href}>
                                         {automobile.vin}
                                     </option>
                                     )}
@@ -96,8 +102,8 @@ const NewSaleForm = () => {
                                 <option value="">Choose a sales person</option>
                                 {salesPeople.map((salesPerson) => {
                                     return (
-                                        <option key={salesPerson.id} value={salesPerson.id}>
-                                            {salesPerson.sales_person}
+                                        <option key={salesPerson.id} value={salesPerson.name}>
+                                            {salesPerson.name}
                                         </option>
                                     );
                                 })}
@@ -106,9 +112,9 @@ const NewSaleForm = () => {
                         <div className="mb-3">
                             <select onChange={(e) => setCustomer(e.target.value)} required name="Customer" id="customer" className="form-select" value={customer}>
                                 <option value="">Choose a customer</option>
-                                {customers.map((customer,index) => {
+                                {customers.map((customer) => {
                                     return (
-                                        <option key={index} value={customer.id}>
+                                        <option key={customer.id} value={customer.name}>
                                             {customer.name}
                                         </option>
                                     );

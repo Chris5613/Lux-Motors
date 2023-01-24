@@ -21,7 +21,7 @@ const SalesPersonForm = () => {
 
         const data = {}
         data.name = name
-        data.employee_id = id
+        data.employee_number = id
 
         const SalesUrl = 'http://localhost:8090/api/sales/person/'
         const fetchConfig = {
