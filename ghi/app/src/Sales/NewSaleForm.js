@@ -90,7 +90,7 @@ const NewSaleForm = () => {
                         <div className="mb-3">
                             <select onChange={(event) => setAutomobile(event.target.value)} required className="form-select" value={automobile} >
                                 <option value="">Choose an automobile</option>
-                                {automobiles.map((automobile,index) =>
+                                {automobiles.map((automobile) =>
                                     <option key={automobile.import_href} value={automobile.import_href}>
                                         {automobile.vin}
                                     </option>

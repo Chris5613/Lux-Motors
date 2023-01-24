@@ -5,9 +5,11 @@ import SalesPersonForm from './Sales/SalesPersonForm';
 import NewCustomer from './Sales/NewCustomer';
 import NewSaleForm from './Sales/NewSaleForm';
 import ListSales from './Sales/ListSales';
+import SalesHistory from './Sales/SalesHistory';
 
 
 function App() {
+
   return (
     <BrowserRouter>
       <Nav />
@@ -26,10 +28,12 @@ function App() {
           <Route path="sales/">
               < Route path="list" element={<ListSales />} />
           </Route>
+          <Route path="sales/">
+              <Route path="history" element={<SalesHistory/>} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>
   );
 }
-
 export default App;

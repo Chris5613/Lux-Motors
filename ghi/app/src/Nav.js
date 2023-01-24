@@ -26,7 +26,7 @@ function Nav() {
                   <NavLink className="dropdown-item" to="/sales/list">List of Sales </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="dropdown-item" to="/saleshistory">Sales History</NavLink>
+                  <NavLink className="dropdown-item" to="/sales/history">Sales History</NavLink>
                 </li>
               </ul>
             </div>
