@@ -30,6 +30,29 @@ function Nav() {
                 </li>
               </ul>
             </div>
+          <div className="dropdown">
+              <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >Inventory</button>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+                <li className="nav-item">
+                  <NavLink className="dropdown-item" to="/manufacturers/list">List of manufacturers</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="dropdown-item" to="/vehicle/list">List of vehicle models</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="dropdown-item" to="/automobiles/list">List of automobiles</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="dropdown-item" to="/manufacturers/create">Create a manufacturer</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="dropdown-item" to="/vehicle/create">Create a vehicle model</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="dropdown-item" to="/automobiles/create">Create an automobile</NavLink>
+                </li>
+              </ul>
+            </div>
           </ul>
         </div>
       </div>
