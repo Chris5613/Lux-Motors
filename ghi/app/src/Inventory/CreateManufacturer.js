@@ -4,8 +4,6 @@ const CreateManufacturer = () => {
 
     const [manufacturer, setManufacturer] = useState("");
 
-
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = {};
