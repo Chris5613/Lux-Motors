@@ -5,7 +5,6 @@ function Nav() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">CarCar</NavLink>
-
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -20,7 +19,8 @@ function Nav() {
                 <li className="nav-item">
                   <NavLink className="dropdown-item" to="/person/new">Add a sales person</NavLink>
                 </li>
-                <li className="nav-item"><NavLink className="dropdown-item" to="/sales/new">Record a New Sale</NavLink>
+                <li className="nav-item">
+                  <NavLink className="dropdown-item" to="/sales/new">Record a New Sale</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="dropdown-item" to="/sales/list">List of Sales </NavLink>
@@ -49,7 +49,7 @@ function Nav() {
                   <NavLink className="dropdown-item" to="/vehicle/create">Create a vehicle model</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="dropdown-item" to="/automobiles/create">Create an automobile</NavLink>
+                  <NavLink className="dropdown-item" to="/automobile/create">Create an automobile</NavLink>
                 </li>
               </ul>
             </div>

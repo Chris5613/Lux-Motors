@@ -9,6 +9,9 @@ import SalesHistory from './Sales/SalesHistory';
 import ListCars from './Inventory/ListCars';
 import ListManufacturers from './Inventory/ListManufacturers';
 import ListModels from './Inventory/ListModels';
+import CreateModel from './Inventory/CreateModel';
+import CreateCar from './Inventory/CreateCar';
+import CreateManufacturer from './Inventory/CreateManufacturer';
 
 
 function App() {
@@ -27,7 +30,9 @@ function App() {
           <Route path="manufacturers/list" element={<ListManufacturers/>} />
           <Route path="vehicle/list" element={<ListModels/>} />
           <Route path="automobile/list" element={<ListCars/>} />
-
+          <Route path="manufacturers/create" element={<CreateManufacturer/>} />
+          <Route path="vehicle/create" element={<CreateModel/>} />
+          <Route path="automobile/create" element={<CreateCar/>} />
         </Routes>
       </div>
     </BrowserRouter>

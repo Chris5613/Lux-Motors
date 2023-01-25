@@ -1,8 +1,9 @@
-import React from 'react'
 
 const ListManufacturers = () => {
     return (
-        <div>ListManufacturers</div>
+        <div>
+            <h1>Manufacturers</h1>
+        </div>
     )
 }
 

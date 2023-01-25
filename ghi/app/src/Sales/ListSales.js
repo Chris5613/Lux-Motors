@@ -12,7 +12,6 @@ const ListSales = () => {
             if (response.ok) {
                 const data = await response.json();
                 setSales(data);
-                console.log(data)
             }
         }
         getRecords();
@@ -33,11 +32,11 @@ const ListSales = () => {
                 <tbody>
                 {sales &&  sales.map(sale =>
                     <tr key={sale.id}>
-                        <th>{sale.sales_person.name}</th>
-                        <th>{sale.sales_person.employee_number}</th>
-                        <th>{sale.customer.name}</th>
-                        <th>{sale.automobile}</th>
-                        <th>${sale.price}</th>
+                        <td>{sale.sales_person.name}</td>
+                        <td>{sale.sales_person.employee_number}</td>
+                        <td>{sale.customer.name}</td>
+                        <td>{sale.automobile}</td>
+                        <td>${sale.price}</td>
                     </tr>
                 )}
                 </tbody>
