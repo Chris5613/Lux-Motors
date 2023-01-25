@@ -104,12 +104,12 @@ Sales Person:
 - "POST" create a worker: "http://localhost:8090/api/sales/person/"
 
 Customers:
--"GET" List all customers: "http://localhost:8090/api/sales/customer/"
--"GET" Get a specific customer: "http://localhost:8090/api/sales/customer/id/"
--"POST" Create a customer: "http://localhost:8090/api/sales/customer/"
+- "GET" List all customers: "http://localhost:8090/api/sales/customer/"
+- "GET" Get a specific customer: "http://localhost:8090/api/sales/customer/id/"
+- "POST" Create a customer: "http://localhost:8090/api/sales/customer/"
 
 
 Sale History:
--"GET" List all sales: "http://localhost:8090/api/sales/records"
--"GET" Get a specific sales history: "http://localhost:8090/api/sales/id/"
--"POST" Create a new sale record: "http://localhost:8090/api/sales/records"
+- "GET" List all sales: "http://localhost:8090/api/sales/records"
+- "GET" Get a specific sales history: "http://localhost:8090/api/sales/id/"
+- "POST" Create a new sale record: "http://localhost:8090/api/sales/records"
