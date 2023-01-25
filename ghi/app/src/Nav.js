@@ -40,7 +40,7 @@ function Nav() {
                   <NavLink className="dropdown-item" to="/vehicle/list">List of vehicle models</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="dropdown-item" to="/automobiles/list">List of automobiles</NavLink>
+                  <NavLink className="dropdown-item" to="/automobile/list">List of automobiles</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="dropdown-item" to="/manufacturers/create">Create a manufacturer</NavLink>
