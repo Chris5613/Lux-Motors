@@ -40,8 +40,7 @@ const NewCustomer = () => {
         }
         const response = await fetch(CustomerUrl, fetchConfig)
         if(response.ok) {
-            const newHat = await response.json()
-            console.log(newHat)
+            const newCustomer = await response.json()
 
             setName('')
             setAddress('')

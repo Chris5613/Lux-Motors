@@ -34,7 +34,6 @@ const SalesPersonForm = () => {
         const response = await fetch(SalesUrl, fetchConfig)
         if(response.ok) {
             const newSalesPerson = await response.json()
-            console.log(newSalesPerson)
 
             setName('')
             setId('')
