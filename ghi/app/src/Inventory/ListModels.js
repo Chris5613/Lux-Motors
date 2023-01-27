@@ -9,7 +9,7 @@ const ListModels = () => {
             const response = await fetch(url);
             if(response.ok) {
                 const data = await response.json()
-                    setModels(data.models)
+                setModels(data.models)
             }
         }
         getModels()
@@ -17,7 +17,28 @@ const ListModels = () => {
 
 
     return (
-        <div>ListModels</div>
+        <div>
+            <h1>List models</h1>
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Manufacturer</th>
+                        <th>Picture</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {models.map(model =>
+                    <tr key={model.id}>
+                        <td>{model.name}</td>
+                        <td>{model.manufacturer.name}</td>
+                        <img src={model.picture_url} alt="model image" />
+                        {/* <td>{model.picture_url}</td> */}
+                    </tr>
+                )}
+                </tbody>
+            </table>
+        </div>
     )
 }
 

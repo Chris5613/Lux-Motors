@@ -139,7 +139,7 @@ def api_list_appointments(request, vin=None):
             safe=False,
         )
 
-@require_http_methods(["GET", "DELETE"])
+@require_http_methods(["GET", "DELETE", "PUT"])
 def api_show_appointment(request, pk):
     if request.method == "GET":
         try:
@@ -153,19 +153,27 @@ def api_show_appointment(request, pk):
             return JsonResponse(
                 {"message": "Invalid Appointment"}
             )
+    elif request.method == "PUT":
+        Appointment.objects.filter(id=pk).update(completed=True)
+        appointment = Appointment.objects.get(id=pk)
+        return JsonResponse(
+            appointment,
+            encoder=AppointmentEncoder,
+            safe=False
+        )
     else:
-        try:
-            appointment = Appointment.object.get(id=pk)
-            appointment.delete()
-            return JsonResponse(
-                {"message": "Appointment has been successfully deleted"}
-            )
-        except:
-            response = JsonResponse(
-                {"message": "Could not delete technician"}
-            )
-            response.status_code = 400
-            return response
+        # try:
+        #     appointment = Appointment.object.get(id=pk)
+        #     appointment.delete()
+        #     return JsonResponse(
+        #         {"message": "Appointment has been successfully deleted"}
+        #     )
+        # except:
+        #     response = JsonResponse(
+        #         {"message": "Could not delete technician"}
+        #     )
+        #     response.status_code = 400
+        #     return response
         # if this doesnt work, try your code below when you can test it
-        # count, _ = Appointment.objects.filter(id=pk).delete()
-        # return JsonResponse({"deleted": count > 0})
+        count, _ = Appointment.objects.filter(id=pk).delete()
+        return JsonResponse({"deleted": count > 0})

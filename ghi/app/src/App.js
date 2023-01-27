@@ -12,6 +12,10 @@ import ListModels from './Inventory/ListModels';
 import CreateModel from './Inventory/CreateModel';
 import CreateCar from './Inventory/CreateCar';
 import CreateManufacturer from './Inventory/CreateManufacturer';
+import TechnicanForm from './Services/TechnicianForm';
+import AppointmentForm from './Services/AppointmentForm';
+import AppointmentList from './Services/AppointmentList';
+import ServiceList from './Services/ServiceList';
 
 
 function App() {
@@ -33,6 +37,10 @@ function App() {
           <Route path="manufacturers/create" element={<CreateManufacturer/>} />
           <Route path="vehicle/create" element={<CreateModel/>} />
           <Route path="automobile/create" element={<CreateCar/>} />
+          <Route path="technicians/new" element={<TechnicanForm  />}  />
+          <Route path="appointments/new" element={<AppointmentForm  />} />
+          <Route path="appointments/" element={<AppointmentList />} />
+          <Route path="appointments/history" element={<ServiceList  />} />
         </Routes>
       </div>
     </BrowserRouter>

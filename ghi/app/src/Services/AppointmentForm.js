@@ -31,7 +31,7 @@ const AppointmentForm = () => {
 
     useEffect(() => {
         async function getTechs() {
-            const url = "http://localhost:8080/api/technicians/";
+            const url = "http://localhost:8080/api/services/technicians/";
             const response = await fetch(url)
             if(response.ok) {
                 const data = await response.json()
@@ -51,7 +51,7 @@ const AppointmentForm = () => {
         data.technician = technician
         data.reason = reason
 
-        const url = "http://localhost:8080/api/appointments/";
+        const url = "http://localhost:8080/api/services/appointments/";
         const fetchConfig = {
             method: "post",
             body: JSON.stringify(data),
@@ -63,6 +63,7 @@ const AppointmentForm = () => {
         const response = await fetch(url, fetchConfig)
         if(response.ok) {
             const newAppointment = await response.json()
+            console.log("this is the new app", newAppointment)
 
 
             setVin("")

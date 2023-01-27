@@ -5,7 +5,7 @@ const AppointmentList = () => {
 
     useEffect(() => {
         async function getAppointments() {
-            const url = "http://localhost:8080/api/appointments/";
+            const url = "http://localhost:8080/api/services/appointments/";
             const response = await fetch(url);
             if(response.ok) {
                 const data = await response.json()
@@ -17,7 +17,7 @@ const AppointmentList = () => {
     }, [])
 
     const canceledAppointment = async (id) => {
-        const url = `http://localhost:8080/api/appointments/detail/${id}/`;
+        const url = `http://localhost:8080/api/services/appointments/${id}/`;
         const fetchConfig = {
                 method: "delete",
                 headers: {
@@ -32,7 +32,7 @@ const AppointmentList = () => {
     }
 
     const finishedAppointment = async (id) => {
-        const url = `http://localhost:8080/api/appointments/detail/${id}/`;
+        const url = `http://localhost:8080/api/services/appointments/${id}/`;
         const fetchConfig = {
             method: "put",
 			body: JSON.stringify({ finished: true }),
@@ -62,19 +62,19 @@ const AppointmentList = () => {
                 </thead>
                 <tbody>
                 {appointments.map((appointment) => {
-                    if(appointment.completed == False) {
+                    if(appointment.completed == false) {
                         return (
                             <tr key={appointment.id}>
                             <td>{appointment.vin}</td>
                             <td>{appointment.owner}</td>
-                            <td>{appointment.date}</td>
+                            <td>{new Date(appointment.date).toLocaleDateString()}</td>
                             <td>{appointment.technician.name}</td>
                             <td>{appointment.reason}</td>
                             <td>
-                                <button onClick={canceledAppointment(appointment.id)} className="btn btn-primary">Cancel</button>
+                                <button onClick={(e) => canceledAppointment(appointment.id)} style={{backgroundColor: "red"}} className="btn btn-primary">Cancel</button>
                             </td>
                             <td>
-                                <button onClick={finishedAppointment(appointment.id)} className="btn btn-primary">Finish</button>
+                                <button onClick={(e) => finishedAppointment(appointment.id)} style={{backgroundColor: "green"}} className="btn btn-primary">Finished</button>
                             </td>
                         </tr>
                         )

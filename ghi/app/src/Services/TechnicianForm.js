@@ -5,11 +5,11 @@ const TechnicanForm = () => {
     const [name, setName] = useState('');
     const [employeeNumber, setEmployeeNumber] = useState('');
 
-    const handleNameChange = event => {
+    const handleNameChange = (event) => {
         setName(event.target.value)
     }
 
-    const handleEmployeeNumberChange = event => {
+    const handleEmployeeNumberChange = (event) => {
         setEmployeeNumber(event.target.value)
     }
 
@@ -20,7 +20,7 @@ const TechnicanForm = () => {
         data.name = name
         data.employee_number = employeeNumber
 
-        const url = 'http://localhost:8080/api/services/technician/'
+        const url = 'http://localhost:8080/api/services/technicians/'
         const fetchConfig = {
             method: "post",
             body: JSON.stringify(data),
