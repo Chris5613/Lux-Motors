@@ -102,15 +102,155 @@ The service microservice has 3 models:
 * Listed below are api endpoints found in the backend:
 
 * List Technicians - **GET** - "http://localhost:8080/api/services/technicians/"
+Returns:
+```
+{
+	"technicians": [
+		{
+			"name": "eric robbins",
+			"employee_number": 221,
+			"id": 1
+		},
+		{
+			"name": "asdf",
+			"employee_number": 45,
+			"id": 2
+		},
+	]
+}
+```
 * Get a specific Technician - **GET** - "http://localhost:8080/api/services/technicians/<int:pk>/"
+Returns:
+```
+{
+	"name": "eric robbins",
+	"employee_number": 221,
+	"id": 1
+}
+```
 * Create Technician - **POST** - "http://localhost:8080/api/services/technicians/"
+**SAMPLE DATA**
+```
+{
+	"name": "Eric Robbins",
+	"employee_number": 221
+}
+```
+Returns:
+```
+{
+	"name": "Eric Robbins",
+	"employee_number": 221,
+	"id": 1
+}
+```
 * Delete a specific Technician - **DELETE** - "http://localhost:8080/api/services/technicians/<int:pk>/"
+Returns:
+```
+{
+	"message": "Technician has been successfully deleted"
+}
+```
 
 * List Appointments - **GET** - "http://localhost:8080/api/services/appointments/"
+Returns:
+```
+{
+	"appointments": [
+		{
+			"href": "/api/services/appointments/1/",
+			"vin": "adfdadsf56",
+			"owner": "Test owner",
+			"date": "2023-01-28T16:10:00+00:00",
+			"technician": {
+				"name": "eric robbins",
+				"employee_number": 221,
+				"id": 2
+			},
+			"reason": "Oil Change 1",
+			"completed": true,
+			"vip": false,
+			"id": 1
+		},
+		{
+			"href": "/api/services/appointments/3/",
+			"vin": "testvin",
+			"owner": "Eugene Takita ",
+			"date": "2023-01-28T16:13:00+00:00",
+			"technician": {
+				"name": "eric robbins",
+				"employee_number": 221,
+				"id": 2
+			},
+			"reason": "Oil Change",
+			"completed": true,
+			"vip": false,
+			"id": 3
+		},
+	]
+}
+```
 * Get a specific appointment - **GET** - "http://localhost:8080/api/services/technicians/<int:pk>/"
+Returns:
+```
+{
+	"href": "/api/services/appointments/8/",
+	"vin": "123",
+	"owner": "owner",
+	"date": "2023-02-08T15:10:00+00:00",
+	"technician": {
+		"name": "eric robbins",
+		"employee_number": 221,
+		"id": 2
+	},
+	"reason": "yws",
+	"completed": false,
+	"vip": false,
+	"id": 8
+}
+```
 * Get a appoint by vin - **GET** - "http://localhost:8080/api/appointments/history/<str:vin>/"
+Returns:
+```
+{
+	"href": "/api/services/appointments/8/",
+	"vin": "123",
+	"owner": "owner",
+	"date": "2023-02-08T15:10:00+00:00",
+	"technician": {
+		"name": "eric robbins",
+		"employee_number": 221,
+		"id": 2
+	},
+	"reason": "yws",
+	"completed": false,
+	"vip": false,
+	"id": 8
+}
+```
 * Create Appointment - **POST** - "http://localhost:8080/api/services/appointments/"
+**SAMPLE DATA**
+```
+{
+	"vin": "123",
+	"owner": "owner",
+	"date": "2023-02-08T15:10:00+00:00",
+	"technician": {
+		"name": "eric robbins",
+		"employee_number": 221,
+	},
+	"reason": "yws",
+	"completed": false,
+	"vip": false,
+}
+```
 * Delete an Appointment - **DELETE** - "http://localhost:8080/api/services/appointments/<int:pk>/"
+Returns:
+```
+{
+	"deleted": true
+}
+```
 
 ### Sample Data
 Create Technician - ``` {
