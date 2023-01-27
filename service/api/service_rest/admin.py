@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Technician, Appointment, AutoMobileVO
+from .models import Technician, Appointment, AutomobileVO
 
 @admin.register(Technician)
 class TechnicianAdmin(admin.ModelAdmin):
@@ -11,6 +11,6 @@ class TechnicianAdmin(admin.ModelAdmin):
 class AppointmentAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(AutoMobileVO)
+@admin.register(AutomobileVO)
 class AutoMobileVOAdmin(admin.ModelAdmin):
     pass

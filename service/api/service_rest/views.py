@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
-from .models import Technician, Appointment, AutoMobileVO
+from .models import Technician, Appointment, AutomobileVO
 from common.json import ModelEncoder
 import json
 
 # Create your views here.
 #encoders here
 class AutoMobileVOEncoder(ModelEncoder):
-    model = AutoMobileVO
+    model = AutomobileVO
     properties = [
         "import_href",
         "vin",
