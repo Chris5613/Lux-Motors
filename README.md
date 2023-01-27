@@ -83,8 +83,36 @@ Inventory, Sales, and Service. The sales and service microservices are used to s
 
 ## Service microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+In our service backend you will find models, RESTful APIs and urls. In the frontend you will find forms and lists that will represent this to the user. Our service backend allows technicians and appointments to be created. They also allow you to see a list of appointments. Lastly you can see the service appointment history by entering the VIN number. You can also find a poller file with helps get data from the inventory backend. This is necessary because our inventory backend is its own microservice. The poller file helps get VIN data from the inventory microservice and helps create an AutoMobileVO object.
+
+### Models
+The service microservice has 3 models:
+
+* Appointment Model - A model that represents the VIN number, customer name, reason for visiting, the date and time of appointment, and the technician assigned to the appointment.
+* Technician Model - A model that represents the techician's name and their employee numbers.
+* AutoMobileVO Model - A value object related to the automobile model in the inventory backend.
+
+### Port
+
+* The microservice fois open and running on port 8080.
+
+
+### CRUD
+
+* Listed below are api endpoints found in the backend:
+
+* List Technicians - **GET** - "http://localhost:8080/api/technicians/"
+* Get a specific Technician - **GET** - "http://localhost:8080/api/technicians/<int:pk>/"
+* Create Technician - **POST** - "http://localhost:8080/api/technicians/"
+* Delete a specific Technician - **DELETE** - "http://localhost:8080/api/technicians/<int:pk>/"
+
+* List Appointments - **GET** - "http://localhost:8080/api/appointments/"
+* Get a specific appointment - **GET** - "http://localhost:8080/api/appointments/detail/<int:pk>/"
+* Get a appoint by vin - **GET** - "http://localhost:8080/api/appointments/<str:vin>/"
+* Create Appointment - **POST** - "http://localhost:8080/api/appointments/"
+* Delete an Appointment - **DELETE** - "http://localhost:8080/api/appointments/detail/<int:pk>/"
+
+
 
 ## Sales microservice
 
