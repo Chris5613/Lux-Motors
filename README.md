@@ -102,7 +102,7 @@ The service microservice has 3 models:
 * Listed below are api endpoints found in the backend:
 
 * List Technicians - **GET** - "http://localhost:8080/api/services/technicians/"
-Returns:
+**Returns:**
 ```
 {
 	"technicians": [
@@ -120,7 +120,7 @@ Returns:
 }
 ```
 * Get a specific Technician - **GET** - "http://localhost:8080/api/services/technicians/<int:pk>/"
-Returns:
+**Returns:**
 ```
 {
 	"name": "eric robbins",
@@ -136,7 +136,7 @@ Returns:
 	"employee_number": 221
 }
 ```
-Returns:
+**Returns:**
 ```
 {
 	"name": "Eric Robbins",
@@ -145,7 +145,7 @@ Returns:
 }
 ```
 * Delete a specific Technician - **DELETE** - "http://localhost:8080/api/services/technicians/<int:pk>/"
-Returns:
+**Returns:**
 ```
 {
 	"message": "Technician has been successfully deleted"
@@ -153,7 +153,7 @@ Returns:
 ```
 
 * List Appointments - **GET** - "http://localhost:8080/api/services/appointments/"
-Returns:
+**Returns:**
 ```
 {
 	"appointments": [
@@ -191,7 +191,7 @@ Returns:
 }
 ```
 * Get a specific appointment - **GET** - "http://localhost:8080/api/services/technicians/<int:pk>/"
-Returns:
+**Returns:**
 ```
 {
 	"href": "/api/services/appointments/8/",
@@ -210,7 +210,7 @@ Returns:
 }
 ```
 * Get a appoint by vin - **GET** - "http://localhost:8080/api/appointments/history/<str:vin>/"
-Returns:
+**Returns:**
 ```
 {
 	"href": "/api/services/appointments/8/",
@@ -245,7 +245,7 @@ Returns:
 }
 ```
 * Delete an Appointment - **DELETE** - "http://localhost:8080/api/services/appointments/<int:pk>/"
-Returns:
+**Returns:**
 ```
 {
 	"deleted": true
