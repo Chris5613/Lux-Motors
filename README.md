@@ -252,12 +252,6 @@ The service microservice has 3 models:
 }
 ```
 
-### Sample Data
-Create Technician - ``` {
-	"name": "Eric Robbins",
-	"employee_number": 221
-} ```
-
 ## Sales microservice
 
 The Sales microservice keeps tracks of customers , workers, and the sales history of the dealership.
