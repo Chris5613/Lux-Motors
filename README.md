@@ -94,25 +94,29 @@ The service microservice has 3 models:
 
 ### Port
 
-* The microservice fois open and running on port 8080.
+* The microservice opens and runs on port 8080.
 
 
 ### CRUD
 
 * Listed below are api endpoints found in the backend:
 
-* List Technicians - **GET** - "http://localhost:8080/api/technicians/"
-* Get a specific Technician - **GET** - "http://localhost:8080/api/technicians/<int:pk>/"
-* Create Technician - **POST** - "http://localhost:8080/api/technicians/"
-* Delete a specific Technician - **DELETE** - "http://localhost:8080/api/technicians/<int:pk>/"
+* List Technicians - **GET** - "http://localhost:8080/api/services/technicians/"
+* Get a specific Technician - **GET** - "http://localhost:8080/api/services/technicians/<int:pk>/"
+* Create Technician - **POST** - "http://localhost:8080/api/services/technicians/"
+* Delete a specific Technician - **DELETE** - "http://localhost:8080/api/services/technicians/<int:pk>/"
 
-* List Appointments - **GET** - "http://localhost:8080/api/appointments/"
-* Get a specific appointment - **GET** - "http://localhost:8080/api/appointments/detail/<int:pk>/"
-* Get a appoint by vin - **GET** - "http://localhost:8080/api/appointments/<str:vin>/"
-* Create Appointment - **POST** - "http://localhost:8080/api/appointments/"
-* Delete an Appointment - **DELETE** - "http://localhost:8080/api/appointments/detail/<int:pk>/"
+* List Appointments - **GET** - "http://localhost:8080/api/services/appointments/"
+* Get a specific appointment - **GET** - "http://localhost:8080/api/services/technicians/<int:pk>/"
+* Get a appoint by vin - **GET** - "http://localhost:8080/api/appointments/history/<str:vin>/"
+* Create Appointment - **POST** - "http://localhost:8080/api/services/appointments/"
+* Delete an Appointment - **DELETE** - "http://localhost:8080/api/services/appointments/<int:pk>/"
 
-
+### Sample Data
+Create Technician - ``` {
+	"name": "Eric Robbins",
+	"employee_number": 221
+} ```
 
 ## Sales microservice
 
