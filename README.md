@@ -271,17 +271,17 @@ Users are able to:
 
 Sales Person:
 - "GET" list of sales people: "http://localhost:8090/api/sales/person/"
-- "GET" details on specific worker: "http://localhost:8090/api/sales/person/${id}"
-- "GET" get a worker sales history: "http://localhost:8090/api/sales/records/${name}"
+- "GET" details on specific worker: "http://localhost:8090/api/sales/person/<int:pk>"
+- "GET" get a worker sales history: "http://localhost:8090/api/sales/records/"
 - "POST" create a worker: "http://localhost:8090/api/sales/person/"
 
 Customers:
 - "GET" List all customers: "http://localhost:8090/api/sales/customer/"
-- "GET" Get a specific customer: "http://localhost:8090/api/sales/customer/id/"
+- "GET" Get a specific customer: "http://localhost:8090/api/sales/customer/<int:pk>/"
 - "POST" Create a customer: "http://localhost:8090/api/sales/customer/"
 
 
 Sale History:
 - "GET" List all sales: "http://localhost:8090/api/sales/records"
-- "GET" Get a specific sales history: "http://localhost:8090/api/sales/id/"
+- "GET" Get a specific sales history: "http://localhost:8090/api/sales/<int:pk>/"
 - "POST" Create a new sale record: "http://localhost:8090/api/sales/records"

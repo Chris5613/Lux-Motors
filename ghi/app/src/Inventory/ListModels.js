@@ -32,8 +32,7 @@ const ListModels = () => {
                     <tr key={model.id}>
                         <td>{model.name}</td>
                         <td>{model.manufacturer.name}</td>
-                        <img src={model.picture_url} alt="model image" />
-                        {/* <td>{model.picture_url}</td> */}
+                        <img src={model.picture_url} alt="model" width={500} height={300} />
                     </tr>
                 )}
                 </tbody>

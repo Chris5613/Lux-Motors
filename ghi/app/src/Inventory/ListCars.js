@@ -21,7 +21,7 @@ const ListCars = () => {
 
     return (
         <div>
-            <h1>List Cars</h1>
+            <h1>List automobiles </h1>
             <table className="table table-striped">
                 <thead>
                     <tr>
