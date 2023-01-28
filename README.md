@@ -22,7 +22,8 @@ Team:
 
 ## Applicaiton Diagram
 
-Insert diagram of project here
+![Diagram](https://i.gyazo.com/f21c1fbcccc770e4bd41ab871e778738.png)
+
 
 ## CRUD Routes, API Documentation
 Appointment Service:
